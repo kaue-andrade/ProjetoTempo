@@ -1,9 +1,11 @@
 # Classe para representar tempo
 
 1. Crie uma classe para representar tempo em termos de hora, minutos e segundos
-2. 
+
 a. Com 4 métodos construtores
+
 b. Uso adequado dos modiﬁcadores de acesso
+
 c. Se valores inválidos forem informados para hora, minuto ou segundo, então deve-se criar objeto com 00:00:00
 
 2. Método chamado toString() que deverá retornar o tempo como  String. Ex: 07:30:00
