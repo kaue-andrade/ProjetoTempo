@@ -14,6 +14,6 @@ c. Se valores inválidos forem informados para hora, minuto ou segundo, então d
 
 a. Deve-se retornar true se o valor for alterado com sucesso, false caso contrário
 
-4. Método que retorne um long com o tempo em segundos. Ex: 01:00:00 retornaria: 3600
+4. Método que retorne um long com o tempo em segundos. Ex: 01:00:00 retornaria: 3600 ✔
 
 5. Método que receba objeto Tempo como parâmetro e retorne um long com a diferença entre este e o tempo do objeto em questão
