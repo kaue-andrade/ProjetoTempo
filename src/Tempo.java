@@ -23,7 +23,7 @@ public class Tempo { //Cria a classe pública denominada Tempo
     }
 
     public Tempo(int h, int m) { //Terceiro método construtor
-        if (validarTime(h, m, 0)) {
+        if (validarTime(h, m, 0)) { //Validação de tempo utilizando h, m, 0 em um if (em português, se)
             this.hora = h; //this.hora recebe h (está representando a hora)
             this.minuto = m; //this.minuto recebe m (está representando o minuto)
             this.segundo = 0; //this.segundo recebe 0
@@ -31,7 +31,7 @@ public class Tempo { //Cria a classe pública denominada Tempo
     }
 
     public Tempo(int h, int m, int s) { //Quarto método construtor
-        if (validarTime(h, m, s)) { //Validação de tempo utilizando if (em português, se)
+        if (validarTime(h, m, s)) { //Validação de tempo utilizando h, m, s em um if (em português, se)
             this.hora = h; //this.hora recebe h (está representando a hora)
             this.minuto = m; //this.minuto recebe m (está representando o minuto)
             this.segundo = s; //this.segundo recebe s (está representando o segundo)
@@ -39,10 +39,10 @@ public class Tempo { //Cria a classe pública denominada Tempo
     }
 
     public boolean validarTime(int h, int m, int s) { //Cria um método para validar o tempo
-        if ((h >= 0 && h < 24) && (m >= 0 && m < 60) && (s >= 0 && s < 60)) {
-            return true;
-        } else {
-            return false;
+        if ((h >= 0 && h < 24) && (m >= 0 && m < 60) && (s >= 0 && s < 60)) { //Estabelece as condições de hora, minuto e segundo determinando o intervalo que eles precisam apresentar
+            return true; //Retorna true (em português, verdadeiro)
+        } else { //Se a condição do if não for atendida, ele entra no else (em português, senão)
+            return false; //Retorna false (em português, falso)
         }
     }
 
@@ -55,25 +55,25 @@ public class Tempo { //Cria a classe pública denominada Tempo
         } else { //Estabelece a condição de "senão", caso a do "se" não seja atendida
             modelo += hora + ":"; //Se a condição for atendida, o modelo será com o valor > 9, sem o número 0 como primeiro dígito
         }
-        if (minuto < 9) {
-            modelo += "0" + minuto + ":";
-        } else {
-            modelo += minuto + ":";
+        if (minuto < 9) { //Estabele a condição de minuto < 9
+            modelo += "0" + minuto + ":"; //Se o minuto for menor que 9, ela entra nesse modelo do relógio, com um 0 e o valor do minuto que possui um dígito
+        } else { //Estabelece a condição de "senão", caso a do "se" não seja atendida
+            modelo += minuto + ":"; //Se a condição for atendida, o modelo será com o valor > 9, sem o número 0 como primeiro dígito
         }
-        if (segundo < 9 ) {
-            modelo += "0"+ segundo;
-        } else {
-            modelo += segundo;
+        if (segundo < 9 ) { //Estabelece a condição de segundo < 9
+            modelo += "0"+ segundo; //Se o segundo for menor que 9, ele entra nesse modelo do relógio, com um 0 e o valor do segundo que possui um dígito
+        } else { //Estabelece a condição de "senão", caso a do "se" não seja atendida
+            modelo += segundo; //Se a condição for atendida, o modelo será com o valor > 9, sem o número 0 como primeiro dígito
         }
 
         return modelo; //Retorna o modelo do relógio
     }
 
     public long tempoSegundos(){ //Método para transformar o tempo informado em segundos
-        long segundos = segundo;
-        long aux = hora * 60;
-        aux = aux + minuto;
-        segundos = segundos + (aux * 60);
+        long segundos = segundo; //A variável segundos recebe segundo
+        long conversao = hora * 60; //A variável conversao recebe a conversão de hora para segundo
+        conversao = conversao + minuto; //A variável con
+        segundos = segundos + (conversao * 60);
         return segundos; //retorna segundos
     }
 
@@ -115,16 +115,12 @@ public class Tempo { //Cria a classe pública denominada Tempo
         }
     }
 
-    public long diferencaTempo(Tempo tAux){
-        long tauxT = tAux.tempoSegundos();
-        long tPrin = tempoSegundos();
-        long tAuxt = tauxT - tPrin;
-        return tAuxt;
+    public long diferencaTempo(Tempo tempo2){ //Método que recebe o objeto Tempo como parâmetro
+        long temposeg2 = tempo2.tempoSegundos(); //Armazena a conversão de t2 em segundos na variável temposeg2
+        long temposeg1 = tempoSegundos(); //Armazena a conversão de t1 em segundos na variável temposeg1
+        long diferenca = temposeg2 - temposeg1; //Armazena a diferença entre temposeg2 e temposeg1
+        return diferenca; //Retorna a diferença entre os dois
     }
-
-    //public void alterarHora(int h, int m, int s){
-
-
 
     //Geração dos getters e setters
 
@@ -155,11 +151,4 @@ public class Tempo { //Cria a classe pública denominada Tempo
     public void setConverterminutos(long converterminutos) {
         this.converterminutos = converterminutos;
     }
-
-    //Métodos que serão criados...
-
-    //5ª questão
-    //public long compare(Tempo t){
-    //}
-
 }
