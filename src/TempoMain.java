@@ -40,6 +40,6 @@ public class TempoMain { //Cria a classe pública denominada TempoMain
         System.out.println("\nSEGUNDO HORÁRIO: " + t2.toString()); //Exibe o horário de t2 em string
         System.out.println("\nCONVERSÃO DO SEGUNDO HORÁRIO PARA SEGUNDOS: " + t2.tempoSegundos() + " segundo(s)"); //Exibe a conversão do segundo horário para string
 
-        System.out.println("\nDIFERENÇA ENTRE OS DOIS HORÁRIOS: " + t1.diferencaTempo(t2) + " segundo(s) | Lembre-se: t1 foi definido com um novo horário (" + t1.toString() + " ou " + t1.tempoSegundos() + " segundos)"); //Exibe a diferença entre os dois tempo (t1 e t2) em segundos
+        System.out.println("\nDIFERENÇA ENTRE OS DOIS HORÁRIOS: " + t1.diferencaTempo(t2) + " segundo(s) | Lembre-se: t1 foi definido com um novo horário (" + t1.toString() + " ou " + t1.tempoSegundos() + " segundos)"); //Exibe a diferença entre os dois tempo (t2 e t1) em segundos
     }
 }
