@@ -72,8 +72,8 @@ public class Tempo { //Cria a classe pública denominada Tempo
     public long tempoSegundos(){ //Método para transformar o tempo informado em segundos
         long segundos = segundo; //A variável segundos recebe segundo
         long conversao = hora * 60; //A variável conversao recebe a conversão de hora para segundo
-        conversao = conversao + minuto; //A variável con
-        segundos = segundos + (conversao * 60);
+        conversao = conversao + minuto; //A variável conversao recebe conversao mais minuto
+        segundos = segundos + (conversao * 60); //A variável segundos recebe segundos a conversao multiplicado por 60
         return segundos; //retorna segundos
     }
 

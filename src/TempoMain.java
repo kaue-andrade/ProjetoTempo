@@ -14,7 +14,7 @@ public class TempoMain { //Cria a classe pública denominada TempoMain
         System.out.println("\nCONVERSÃO PARA SEGUNDOS: " + t1.tempoSegundos() + " segundo(s)\n"); //Exibe a conversão do tempo em segundos de t1
 
         if (t1.setHora(00)){ //Define a nova hora de t1 (é possível vermos o valor escolhido entre parênteses)
-            System.out.println("Você definiu a hora com o valor um valor válido"); //Exibe a mensagem se a condição for atendida
+            System.out.println("Você definiu a(s) hora(s) com o valor um valor válido"); //Exibe a mensagem se a condição for atendida
         } else{
             System.out.println("Ops! Você definiu uma hora inválida! O valor recebe 0. Lembre-se: a hora precisa estar entre 0 e 24"); //Exibe a mensagem se a condição for atendida
         }
@@ -32,7 +32,7 @@ public class TempoMain { //Cria a classe pública denominada TempoMain
         }
 
         System.out.println("\nNOVO HORÁRIO DE TEMPO 1 FOI DEFINIDO COMO: " + t1.toString()); //Exibe o novo horário de t1
-        System.out.println("NOVO HORÁRIO EM SEGUNDOS: " + t1.tempoSegundos()); //Exibe o tempo de t1 em segundos
+        System.out.println("NOVO HORÁRIO EM SEGUNDOS: " + t1.tempoSegundos() + " segundo(s)"); //Exibe o tempo de t1 em segundos
 
         Tempo t2 = new Tempo(02, 00, 00); //Criação do t2 e estabelecimento dos valores
 
@@ -40,6 +40,6 @@ public class TempoMain { //Cria a classe pública denominada TempoMain
         System.out.println("\nSEGUNDO HORÁRIO: " + t2.toString()); //Exibe o horário de t2 em string
         System.out.println("\nCONVERSÃO DO SEGUNDO HORÁRIO PARA SEGUNDOS: " + t2.tempoSegundos() + " segundo(s)"); //Exibe a conversão do segundo horário para string
 
-        System.out.println("\nDIFERENÇA ENTRE OS DOIS HORÁRIOS: " + t1.diferencaTempo(t2) + " segundo(s) | Lembre-se: t1 foi definido com um novo horário (" + t1.tempoSegundos() + ") segundos"); //Exibe a diferença entre os dois tempo (t1 e t2) em segundos
+        System.out.println("\nDIFERENÇA ENTRE OS DOIS HORÁRIOS: " + t1.diferencaTempo(t2) + " segundo(s) | Lembre-se: t1 foi definido com um novo horário (" + t1.toString() + " ou " + t1.tempoSegundos() + " segundos)"); //Exibe a diferença entre os dois tempo (t1 e t2) em segundos
     }
 }
