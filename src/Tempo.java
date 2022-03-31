@@ -51,12 +51,12 @@ public class Tempo { //Cria a classe pública denominada Tempo
         String modelo = ""; //O modelo do relógio recebe ""
 
         if (hora < 9) { //Estebelece a condição de hora < 9
-            modelo += "0" + hora + ":"; //Se hora menor que 9, ela entra nesse modelo do relógio, com um 0 e o valor da hora que possui um dígito
+            modelo = "0" + hora + ":"; //Se hora menor que 9, ela entra nesse modelo do relógio, com um 0 e o valor da hora que possui um dígito
         } else { //Estabelece a condição de "senão", caso a do "se" não seja atendida
-            modelo += hora + ":"; //Se a condição for atendida, o modelo será com o valor > 9, sem o número 0 como primeiro dígito
+            modelo = hora + ":"; //Se a condição for atendida, o modelo será com o valor > 9, sem o número 0 como primeiro dígito
         }
         if (minuto < 9) { //Estabele a condição de minuto < 9
-            modelo += "0" + minuto + ":"; //Se o minuto for menor que 9, ela entra nesse modelo do relógio, com um 0 e o valor do minuto que possui um dígito
+            modelo = "0" + minuto + ":"; //Se o minuto for menor que 9, ela entra nesse modelo do relógio, com um 0 e o valor do minuto que possui um dígito
         } else { //Estabelece a condição de "senão", caso a do "se" não seja atendida
             modelo += minuto + ":"; //Se a condição for atendida, o modelo será com o valor > 9, sem o número 0 como primeiro dígito
         }
@@ -80,7 +80,7 @@ public class Tempo { //Cria a classe pública denominada Tempo
 
         //Uma certa hora, para ser válida, necessita ser maior ou igual a 0 e menor ou igual a 24
 
-        if ((hora >= 0) && (hora <= 24)) { //Estabelece a condição "se" de hora >= 0 e hora <= 24
+        if ((hora >= 0) && (hora < 24)) { //Estabelece a condição "se" de hora >= 0 e hora < 24
             this.hora = hora; //this.hora recebe hora
             return true; //Se a condição for atendida, returna "true" (verdadeiro em português)
         } else { //Estabelece a condição de "senão", caso a do "se" não seja atendida
@@ -115,8 +115,9 @@ public class Tempo { //Cria a classe pública denominada Tempo
     }
 
     public long diferencaTempo(Tempo tempo2){ //Método que recebe o objeto Tempo como parâmetro
-        long temposeg2 = tempo2.tempoSegundos(); //Armazena a conversão de t2 em segundos na variável temposeg2
+        //long temposeg2 = tempo2.tempoSegundos(); //Armazena a conversão de t2 em segundos na variável temposeg2
         long temposeg1 = tempoSegundos(); //Armazena a conversão de t1 em segundos na variável temposeg1
+        long temposeg2 = tempo2.tempoSegundos();
         long diferenca = temposeg2 - temposeg1; //Armazena a diferença entre temposeg2 e temposeg1
         return diferenca; //Retorna a diferença entre os dois
     }
