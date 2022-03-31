@@ -5,8 +5,6 @@ public class Tempo { //Cria a classe pública denominada Tempo
     private int hora; //Cria a variável hora como tipo int e private
     private int minuto; //Cria a variável minuto como tipo int e private
     private long segundo; //Cria a variável segundo como tipo int e private
-    private long converterhoras; //Cria a variável converterhoras como tipo long e private
-    private long converterminutos; //Cria a variável converterminutos como tipo long e private
 
     public Tempo() { //Primeiro método construtor
         this.hora = 0; //this.minuto recebe 0
@@ -78,7 +76,7 @@ public class Tempo { //Cria a classe pública denominada Tempo
 
     public boolean setHora(int hora) { //Criação do método para alterar a hora
 
-        //Uma certa hora, para ser válida, necessita ser maior ou igual a 0 e menor ou igual a 24
+        //Uma certa hora, para ser válida, necessita ser maior ou igual a 0 e menor que 24
 
         if ((hora >= 0) && (hora < 24)) { //Estabelece a condição "se" de hora >= 0 e hora < 24
             this.hora = hora; //this.hora recebe hora
@@ -89,11 +87,11 @@ public class Tempo { //Cria a classe pública denominada Tempo
         }
     }
 
-    //Um certo minuto, para ser válido, necessita ser maior ou igual a 0 e menor ou igual a 59
+    //Um certo minuto, para ser válido, necessita ser maior ou igual a 0 e menor que 59
 
     public boolean setMinutos(int minuto) { //Criação do método para alterar os minutos
 
-        if ((minuto >= 0) && (minuto <= 59)) { //Estabelece a condição "se" de minuto >= 0 e hora <= 59
+        if ((minuto >= 0) && (minuto < 59)) { //Estabelece a condição "se" de minuto >= 0 e hora < 59
             this.minuto = minuto; //this.minuto recebe minuto
             return true; //Se a condição for atendida, retorna "true" (verdadeiro em português)
         } else { //Estabelece a condição de "senão", caso a condição do "se" não seja atendida
@@ -102,10 +100,10 @@ public class Tempo { //Cria a classe pública denominada Tempo
         }
     }
 
-    //Um certo segundo, para ser válido, necessita ser maior ou igual a 0 e menor ou igual a 59
+    //Um certo segundo, para ser válido, necessita ser maior ou igual a 0 e menor que 59
 
     public boolean setSegundos(int segundo){
-        if((segundo >= 0) && (segundo <= 59)){ //Estabelece a condição "se" de segundo >= 0 e segundo <= 59
+        if((segundo >= 0) && (segundo < 59)){ //Estabelece a condição "se" de segundo >= 0 e segundo < 59
             this.segundo = segundo; //this.segundo recebe segundo
             return true; //Se a condição for atendida,
         } else { //Estabelece a condição de "senão", caso a condição do "se" não seja atendida
